@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CardDesign extends StatelessWidget {
-  const CardDesign({
-    Key? key,
-    required this.title,
-    required this.subtitle1,
-    required this.img,
-    required this.price
-  }) : super(key: key);
+  const CardDesign(
+      {Key? key,
+      required this.title,
+      required this.subtitle1,
+      required this.img,
+      required this.price})
+      : super(key: key);
   final String img;
   final String title;
   final String subtitle1;
@@ -27,7 +27,15 @@ class CardDesign extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 5),
                 child: ListTile(
                   leading: Image.network(img),
-                  title: Text(title),
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(title),
+                      Transform.rotate(
+                          angle: 1.56, child: Icon(Icons.keyboard_control)),
+                    ],
+                  ),
+
                   // trailing: Icon(Icons.keyboard_tab),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,9 +44,14 @@ class CardDesign extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('₹$price'),
-                          Transform.rotate(
-                              angle: 1.56, child: Icon(Icons.keyboard_control)),
+                          Text(
+                            '₹$price',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          // Transform.rotate(
+                          //     angle: 1.56, child: Icon(Icons.keyboard_control)),
                         ],
                       ),
                       Row(
@@ -75,31 +88,5 @@ class CardDesign extends StatelessWidget {
         ),
       ),
     );
-
-    // return Card(
-    //   child: Column(
-    //     children: [
-    //       ListTile(
-    //         leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrN4KIx8T4U4RQbCatLT8FTWOr5Md4u5Ygtg&usqp=CAU'),
-    //         title: Text('data'),
-    //         subtitle: Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             Text('data'),
-    //             Text('data')
-    //           ],
-    //         ),
-    //       ),
-    //       Divider(color: Colors.grey,),
-    //       Wrap(
-    //         children: [
-    //           Icon(Icons.share),
-    //           Text('Share')
-    //         ],
-    //       )
-    //     ],
-    //   ),
-
-    // );
   }
 }

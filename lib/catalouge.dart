@@ -35,11 +35,7 @@ class Catalouge extends StatelessWidget {
             CardDesign(title: 'Oneplus Bullets Wireless ', subtitle1: 'Earphones', img: 'https://m.media-amazon.com/images/I/51R4FJdgbMS._SL1500_.jpg', price: '1999'),
             CardDesign(title: 'Acer Nitro 5', subtitle1: 'Gaming Laptop', img:'https://images-eu.ssl-images-amazon.com/images/I/41x2hlOf3RS._SY300_SX300_QL70_FMwebp_.jpg', price:'75,000'),
             CardDesign(title: 'Noise Color Fit Pro', subtitle1: 'Smart Watch', img:'https://m.media-amazon.com/images/I/61xzuXWWozS._SX522_.jpg', price: '2,299')],)
-          ,) 
-          
-          
-           
-        
+          ,)  
         ));
   }
 }
